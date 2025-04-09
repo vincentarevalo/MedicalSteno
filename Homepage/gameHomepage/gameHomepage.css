@@ -153,6 +153,9 @@ body {
   transform: translateY(0);
 }
 
+.logout-btn a{
+text-decoration: none;
+}
 .logout-icon {
   width: 18px;
   height: 18px;
