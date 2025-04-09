@@ -5,6 +5,10 @@
   font-family: "Arial", sans-serif;
 }
 
+a{
+
+  padding-top: 40px;
+}
 body {
   background: #111;
   display: flex;

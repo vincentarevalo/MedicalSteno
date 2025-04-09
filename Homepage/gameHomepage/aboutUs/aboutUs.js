@@ -32,4 +32,4 @@ function moveSlide(direction) {
 // Optional: Automatically change slides every 5 seconds
 setInterval(() => {
     moveSlide(1);
-}, 5000);
+}, 20000);
