@@ -6,7 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     const password = document.getElementById('password').value;
 
     // Simple validation
-    if (username === 'vincent arevalo' && password === 'pogi') {
+    if (username === 'Pasoa' && password === 'MedicalSteno') {
         window.location.href = "../gameHomepage/gameHomepage.html"
     } else {
         document.getElementById('error-message').textContent = 'Invalid username or password.';

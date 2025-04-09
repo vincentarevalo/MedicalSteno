@@ -102,10 +102,6 @@ function toggleSound() {
 }
 
 // Function to go to the main menu (this redirects to another HTML file)
-function goToMainMenu() {
-  window.location.href = "/Homepage/gameHomepage/gameHomepage.html"; // Use an absolute path
-}
-
 function toggleSettingsMenu() {
   const settingsMenu = document.getElementById("settings-menu");
   settingsMenu.style.display =
