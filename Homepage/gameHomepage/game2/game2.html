@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedTerms</title>
+    <link rel="stylesheet" href="game2.css" />
+    <link rel="icon" type="image/x-icon" href="/gameHomepage/Logo/logo.png">
+  </head>
+  <body>
+
+
+    <div class="settings-container">
+      <button class="settings-btn" onclick="toggleSettingsMenu()">⚙️</button>
+      <div class="settings-menu" id="settings-menu">
+        <a href="../gameHomepage.html"><button class="menu-btn">Main Menu</button></a>
+        <button class="sound-btn" id="sound-btn" onclick="toggleSound()">
+          <img src="./images/soundOn.png" height="30px" width="30px" alt="" id="sound-icon">
+        </button>
+      </div>
+    </div>
+    <div class="gameContainer">
+      <div class="scoreContainer">
+        <div id="score" hidden>Score: 0 / 10</div>
+        <div id="lives" hidden>Lives: 3</div>
+      </div>
+      <div class="quiz-container">
+        <div class="image-container" id="imageContainer" hidden></div>
+        <div class="word-display" id="wordDisplay" hidden></div>
+        <div class="letterContainer">
+          <div id="remaining-questions" hidden>Remaining Questions: 10</div>
+          <div class="letter-buttons" id="letterButtons" hidden></div>
+        </div>
+
+        <div class="buttonContainer">
+          <div id="result" hidden></div>
+
+          <button id="startBtn" onclick="startGame()">Start Game</button>
+          <!-- Start Button -->
+          <button id="restartBtn" hidden onclick="restartGame()">
+            Restart Game
+          </button>
+          <button id="hintBtn" hidden onclick="useHint()">Use Hint</button>
+
+          <button id="reviewBtn" hidden onclick="reviewAnswers()">
+            Review Answers
+          </button>
+        </div>
+      </div>
+    </div>
+    <audio id="background-audio" src="./musicbg.mp3" loop></audio>
+    <script src="./game2.js"></script>
+  </body>
+</html>

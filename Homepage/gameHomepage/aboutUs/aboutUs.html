@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="./aboutUs.css">
+</head>
+<body>
+
+    <!-- Image Slider Section -->
+    <section class="slider-container">
+        <div class="slider">
+            <div class="slide active">
+                <img src="./aboutUs.png" alt="Image 1" class="slider-image">
+            </div>
+            <div class="slide">
+                <img src="./aboutUs2.png" alt="Image 2" class="slider-image">
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+
+    <script src="./aboutUs.js"></script>
+</body>
+</html>

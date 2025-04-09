@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.slider-container {
+  position: relative;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio (1080/1920) */
+  max-height: 100vh;
+  max-width: 177.78vh; /* 16:9 aspect ratio (1920/1080) */
+  overflow: hidden;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.65, 0, 0.35, 1),
+    transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  will-change: transform, opacity;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 40px;
+  padding-top: 80px;
+  transform: translateY(120px);
+  transition: transform 0.8s cubic-bezier(0.32, 0, 0.67, 0);
+  backdrop-filter: blur(5px);
+}
+
+.slide.active .slide-content {
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.slide h2 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.slide p {
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 12px;
+}
+
+.slider-nav button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  padding: 0;
+}
+
+.slider-nav button.active {
+  background: white;
+  border-color: white;
+  transform: scale(1.2);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(2px);
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-left {
+  left: 30px;
+}
+
+.arrow-right {
+  right: 30px;
+}
+
+.slide-number {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: white;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 20px;
+  z-index: 2;
+  backdrop-filter: blur(2px);
+}
+
+.proceed-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.proceed-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .slide-content {
+    padding: 30px;
+    padding-top: 60px;
+  }
+
+  .arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .arrow-left {
+    left: 15px;
+  }
+
+  .arrow-right {
+    right: 15px;
+  }
+
+  .slider-nav {
+    bottom: 20px;
+  }
+
+  .proceed-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+  }
+}
+
+.settings-container {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+.settings-btn {
+  background-color: #3a3a3a;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.settings-btn:hover {
+  background-color: #00c9a7;
+  transform: scale(1.1);
+}
+
+.settings-menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  transition: opacity 0.3s ease;
+}
+
+.settings-menu.show {
+  display: flex;
+  opacity: 1;
+}
+
+.menu-btn,
+.sound-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px;
+  margin: 5px 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+}
+
+.menu-btn:hover,
+.sound-btn:hover {
+  background-color: #00c9a7;
+  color: #000;
+}
+
+.sound-btn img {
+  transition: transform 0.3s ease;
+}
+
+.sound-btn img:hover {
+  transform: rotate(20deg);
+}

@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Set basic styles for the body and container */
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Light background for contrast */
+  overflow-x: hidden;
+ 
+}
+
+/* Container holding the image and button */
+.instructionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  width: 100%; /* Make sure the container takes full width */
+  max-width: 600px; /* Set max-width for the container */
+}
+
+/* Style for the image */
+.instruction-image {
+  width: 100%;
+  height: auto; /* Make image responsive */
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+
+.proceed-button {
+    position: absolute;
+    background: #e8e7f6;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 20px;  /* Slightly larger padding for a more prominent button */
+    border: 5px solid #004aad;  /* Darker blue border */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Deeper shadow for a floating effect */
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;  /* Smooth transition for effects */
+    outline: none;
+    top: 35%;  /* Center vertically */
+    left: 50%;  /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfectly center the button */
+    
+    /* Neon effect for the text */
+    text-shadow: 
+        0 0 5px #004aad, 
+        0 0 10px #004aad, 
+        0 0 15px #8a2be2, 
+        0 0 20px #8a2be2, 
+        0 0 25px #8a2be2, 
+        0 0 30px #8a2be2, 
+        0 0 35px #8a2be2;
+}
+
+/* Hover effects for the button */
+.proceed-button:hover {
+    background: linear-gradient(45deg, #9370db, #8a2be2); /* Reverse gradient on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Slightly deeper shadow on hover */
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly scale up for a button press effect */
+    /* Neon effect on hover */
+    text-shadow: 
+        0 0 10px #004aad, 
+        0 0 20px #004aad, 
+        0 0 30px #8a2be2, 
+        0 0 40px #8a2be2, 
+        0 0 50px #8a2be2, 
+        0 0 60px #8a2be2, 
+        0 0 70px #8a2be2;
+}
+
+/* Focus effect for accessibility */
+.proceed-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(138, 43, 226, 0.5);  /* Violet focus ring */
+}
+
+/* Pressed button effect */
+.proceed-button:active {
+    transform: translate(-50%, -50%) scale(0.95);  /* Slightly scale down when pressed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Reduced shadow when pressed */
+}

@@ -1,0 +1,81 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-screen background */
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Slider container setup */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+/* Slider (The main container for images) */
+.slider {
+  display: flex;
+  width: 200%; /* Double width to accommodate two images */
+  transition: transform 1s ease;
+}
+
+.slide {
+  width: 50%; /* Each image takes up 50% of the slider */
+  height: 100%;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes sure images cover the container without stretching */
+  border-radius: 10px; /* Adds rounded corners for a more aesthetic look */
+}
+
+/* Previous & Next Buttons */
+button {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 0.3s;
+  border-radius: 50%;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Add smooth fading animation for images */
+.slider-image {
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-image.active {
+  opacity: 1;
+}
+
+.slider-image.inactive {
+  opacity: 0;
+}

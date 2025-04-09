@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> MedScript</title>
+    <link rel="stylesheet" href="./game3.css" />
+    <link rel="icon" type="image/x-icon" href="/gameHomepage/Logo/logo.png">
+  </head>
+  <body>
+    <div class="settings-container">
+      <button class="settings-btn" onclick="toggleSettingsMenu()">⚙️</button>
+      <div class="settings-menu" id="settings-menu">
+        <a href="../gameHomepage.html"
+          ><button class="menu-btn">Main Menu</button></a
+        >
+        <button class="sound-btn" id="sound-btn" onclick="toggleSound()">
+          <img
+            src="./images/soundOn.png"
+            height="30px"
+            width="30px"
+            alt=""
+            id="sound-icon"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="gameBackground">
+        <img class="background" src="./images/gameBackground.png" alt="" />
+        <div class="termBackground">
+          <div class="scoreContainer" style="display: none">
+            <div class="scoreboard">
+              <span id="score">Score = 0</span>/<span id="total">10</span>
+            </div>
+            <div class="remaining-questions">
+              Remaining: <span id="remaining">10</span>
+            </div>
+          </div>
+
+          <!-- Initially hide the term image -->
+          <img id="term-image" src="" alt="" style="display: none" />
+          <div class="inputContainer">
+            <!-- Initially hide the input field -->
+            <input
+              type="text"
+              id="answer-input"
+              placeholder="Type the term here..."
+              disabled
+              style="display: none"
+            />
+            <div class="button-container">
+              <!-- Initially show only the play button -->
+              <button id="hint-button" class="btn" style="display: none">
+                Hint
+              </button>
+              <button id="play-button" class="btn">Start Game</button>
+              <!-- Hide review and play again buttons initially -->
+              <button id="review-button" class="btn" style="display: none">
+                Review Answers
+              </button>
+              <button id="play-again-button" class="btn" style="display: none">
+                Play Again
+              </button>
+            </div>
+            <div class="timer" style="display: none">
+              Time left: <span id="timer">15</span>s
+            </div>
+
+            <div class="popup" id="popup"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Section -->
+    <div class="reviewSection" id="review-section" style="display: none">
+      <button id="close-review-button">×</button>
+      <div class="review-content">
+        <h2>Review Answers</h2>
+        <div class="reviewAnswers" id="review-answers">
+          <!-- Review answers will be dynamically populated here -->
+        </div>
+        <div class="review-actions">
+          <button id="play-again-review" class="review-btn">Play Again</button>
+          <button id="close-review" class="review-btn">Close Review</button>
+        </div>
+      </div>
+    </div>
+
+    <audio id="background-audio" src="./musicbg.mp3" loop></audio>
+    <script src="./game3.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Homepage</title>
+    <link rel="stylesheet" href="./gameHomepage.css" />
+    <link rel="icon" type="image/x-icon" href="/gameHomepage/Logo/logo.png">
+  </head>
+  <body>
+    <div class="gameHomepage">
+      <a href="../gameHomepage/aboutUs/aboutUs.html" target="_blank" class="about-us-button">About Us</a>F
+      <div class="gameBackground">
+        <img src="./background.png" alt="Background Image" />
+      </div>
+      <div class="gameContainer">
+        <div class="firstGame">
+          <div class="gameImageContainer">
+            <img src="./Game1.png" alt="Game 1" class="gameImage" />
+            <a
+              href="../gameHomepage/game1/homepageInstruction/instruction.html"
+              class="play-button"
+            >
+              <span class="icon">▶</span>
+              <span class="text">Play</span>
+            </a>
+          </div>
+        </div>
+        <div class="secondGame">
+          <div class="gameImageContainer">
+            <img src="./Game2.png" alt="Game 2" class="gameImage" />
+            <a
+              href="../gameHomepage/game2/homepageInstruction/instruction.html"
+              class="play-button"
+            >
+              <span class="icon">▶</span>
+              <span class="text">Play</span>
+            </a>
+          </div>
+        </div>
+        <div class="thirdGame">
+          <div class="gameImageContainer">
+            <img src="./Game3.png" alt="Game 3" class="gameImage" />
+            <a
+              href="../gameHomepage/game3/homepageInstruction/instruction.html"
+              class="play-button"
+            >
+              <span class="icon">▶</span>
+              <span class="text">Play</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="logout-btn" onclick="logout()">
+      <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+          <path d="M16 13v-2H7V8l-5 4 5 4v-3z"/>
+          <path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"/>
+      </svg>
+      Logout
+  </button>
+  <button class="logout-btn" onclick="logout()">
+    <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+        <path d="M16 13v-2H7V8l-5 4 5 4v-3z"/>
+        <path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"/>
+    </svg>
+    Logout
+</button>
+
+  </body>
+  <script>
+    function logout() {
+      // Add your logout functionality here
+      console.log("Logging out...");
+      window.location.href = "../user/user.html"; // Uncomment to redirect to logout page
+    }
+  </script>
+</html>

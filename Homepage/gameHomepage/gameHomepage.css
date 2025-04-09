@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Set a default font */
+}
+
+.gameHomepage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.gameBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Send background image behind other elements */
+}
+
+.gameBackground img {
+  width: 100%; /* Make background image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.gameContainer {
+  position: relative; /* Change to relative for better alignment */
+  top: 200px; /* Adjust as needed */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Center items vertically */
+}
+
+.firstGame,
+.secondGame,
+.thirdGame {
+  flex: 1; /* Allow each game div to grow equally */
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  align-items: center; /* Center images vertically */
+  padding: 10px; /* Add some padding */
+  position: relative; /* Make this div relative to position play button */
+}
+
+.firstGame img,
+.secondGame img,
+.thirdGame img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Add border radius to images */
+}
+
+/* Play Button Styling */
+.play-button {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8a4dff; /* Violet color */
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Play button hover effect */
+.play-button:hover {
+  background-color: #6a2dff;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Play button icon styling */
+.icon {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+/* Play button text styling */
+.text {
+  font-size: 20px;
+}
+
+/* Play button active effect */
+.play-button:active {
+  transform: translate(-50%, -50%) scale(0.98);
+}
+
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff3c3c, #d11a1a);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(209, 26, 26, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.logout-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(209, 26, 26, 0.4);
+}
+
+.logout-btn:hover::before {
+  left: 100%;
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+.logout-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.logout-btn:hover .logout-icon {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .logout-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.about-us-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #3cff8d, #067a02);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(209, 26, 26, 0.3);
+  display: flex;
+  text-decoration: none
+;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.about-us-button:hover {
+  background-color: darkgreen;
+}
